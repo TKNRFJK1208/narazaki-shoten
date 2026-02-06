@@ -10,14 +10,14 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/icon": "^1.15.0",
     "autoprefixer": "^10.4.24",
-    "nuxt": "3.11.2",
+    "nuxt": "^4.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17"
   },
   "packageManager": "pnpm@10.22.0+sha256.053a8493e8e328a3c6d7ff5cb079bef28719152ccf831e4666b5c0332b77bb88",
   "dependencies": {
-    "nuxt-icon": "^1.0.0-beta.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   }

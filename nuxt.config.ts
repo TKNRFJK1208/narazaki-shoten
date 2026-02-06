@@ -1,6 +1,6 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: true, // Required for pre-rendering during generate
+  modules: ["@nuxt/icon"],
+  ssr: true,
   app: {
     head: {
       title: "Narazaki Shoten | Healthy & Fast Gyu-don in Amsterdam",
@@ -28,12 +28,11 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['nuxt-icon'],
-  nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes: ["/"],
-    },
-  },
+  // nitro: {
+  //   prerender: {
+  //     crawlLinks: true,
+  //     routes: ["/"],
+  //   },
+  // },
   devtools: { enabled: true },
 });
