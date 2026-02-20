@@ -49,8 +49,9 @@ export default defineNuxtConfig({
   nitro: {
     preset: "aws-lambda",
     prerender: {
-      crawlLinks: true,
-      routes: ["/"],
+      crawlLinks: false, // リンクの自動クロールをオフにする
+      failOnError: false, // プリレンダリングでエラーが出てもビルドを続行する
+      ignore: ['/'], // Lambda環境以外でクラッシュするのを防ぐ
     },
   },
   devtools: { enabled: true },

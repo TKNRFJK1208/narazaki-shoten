@@ -24,6 +24,8 @@ jobs:
         run: npm run build
         env:
           NITRO_PRESET: aws-lambda
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
