@@ -57,4 +57,4 @@ jobs:
       - name: Sync Static Assets to S3
         run: |
           BUCKET_NAME=$(aws cloudformation describe-stacks --stack-name narazaki-shoten-stack --query "Stacks[0].Outputs[?OutputKey=='StaticAssetsBucketName'].OutputValue" --output text)
-          aws s3 sync .output/public s3://$BUCKET_NAME --delete --exclude "*" --include "_nuxt/*" --include "favicon.ico"
+          aws s3 sync .output/public s3://$BUCKET_NAME --delete
