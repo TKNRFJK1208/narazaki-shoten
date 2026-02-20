@@ -37,12 +37,13 @@ jobs:
       - name: Setup AWS SAM CLI
         uses: aws-actions/setup-sam@v2
 
-      - name: SAM Build
-        run: sam build
+      - name: Debug Output Server
+        run: ls -lA .output/server
 
       - name: SAM Deploy
         run: |
           sam deploy \
+            --template-file template.yaml \
             --no-confirm-changeset \
             --no-fail-on-empty-changeset \
             --stack-name narazaki-shoten-stack \
