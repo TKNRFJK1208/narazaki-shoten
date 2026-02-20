@@ -56,3 +56,15 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
 });
+function defineNuxtConfig(arg0: {
+  ssr: boolean; runtimeConfig: { microcmsApiKey: string | undefined; public: { microcmsServiceDomain: string | undefined; }; }; app: { pageTransition: { name: string; mode: string; }; head: { title: string; meta: ({ charset: string; } | { name: string; content: string; } | { property: string; content: string; })[]; link: ({ rel: string; type: string; href: string; } | { rel: string; href: string; crossorigin: string; })[]; }; }; css: string[]; postcss: { plugins: { tailwindcss: {}; autoprefixer: {}; }; }; modules: string[]; components: { path: string; pathPrefix: boolean; }[]; nitro: {
+    preset: string; prerender: {
+      crawlLinks: boolean; // リンクの自動クロールをオフにする
+      failOnError: boolean; // プリレンダリングでエラーが出てもビルドを続行する
+      ignore: string[];
+    };
+  }; devtools: { enabled: boolean; };
+}) {
+  throw new Error("Function not implemented.");
+}
+
