@@ -89,19 +89,19 @@ Resources:
           TargetOriginId: ApiOrigin
           ViewerProtocolPolicy: redirect-to-https
           AllowedMethods: [DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT]
-          CachePolicyId: 4135ea2d-6df8-44a3-9df3-4b5a84be39ad # Managed-CachingDisabled
-          OriginRequestPolicyId: b689b0a8-53d0-40ab-b3f4-420692f5e6b1 # Managed-AllViewerExceptHostHeader
+          CachePolicyId: 4135ea2d-6df8-44a3-9df3-4b5a84be39ad
+          OriginRequestPolicyId: b689b0a8-53d0-40ab-b3f4-420692f5e6b1
         CacheBehaviors:
           - PathPattern: /_nuxt/*
             TargetOriginId: S3Origin
             ViewerProtocolPolicy: https-only
             AllowedMethods: [GET, HEAD]
-            CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6 # Managed-CachingOptimized
+            CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
           - PathPattern: /favicon.ico
             TargetOriginId: S3Origin
             ViewerProtocolPolicy: https-only
             AllowedMethods: [GET, HEAD]
-            CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6 # Managed-CachingOptimized
+            CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
 
 Outputs:
   CloudFrontDomainName:
