@@ -49,6 +49,7 @@ jobs:
             --stack-name narazaki-shoten-stack \
             --resolve-s3 \
             --capabilities CAPABILITY_IAM \
+            --on-failure DELETE \
             --parameter-overrides \
               MicrocmsServiceDomain=${{ secrets.MICROCMS_SERVICE_DOMAIN }} \
               MicrocmsApiKey=${{ secrets.MICROCMS_API_KEY }}
