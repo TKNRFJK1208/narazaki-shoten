@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
+  compatibilityDate: "2024-04-03",
   runtimeConfig: {
     microcmsApiKey: process.env.MICROCMS_API_KEY,
     public: {
