@@ -7,9 +7,10 @@
       </NuxtLink>
       
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-        <a href="#menu" class="hover:text-primary transition-colors">Menu</a>
-        <a href="#about" class="hover:text-primary transition-colors">About</a>
-        <a href="#location" class="hover:text-primary transition-colors">Location</a>
+        <NuxtLink to="/menu" class="hover:text-primary transition-colors">Menu</NuxtLink>
+        <NuxtLink to="/about" class="hover:text-primary transition-colors">About</NuxtLink>
+        <NuxtLink to="/location" class="hover:text-primary transition-colors">Location</NuxtLink>
+        <NuxtLink to="/blog" class="hover:text-primary transition-colors">Blog</NuxtLink>
       </nav>
 
       <a :href="externalLinks.ORDER_ONLINE" target="_blank" class="bg-primary text-background px-4 py-2 rounded font-bold hover:bg-yellow-500 transition-colors text-sm">

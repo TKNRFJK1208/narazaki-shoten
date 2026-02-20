@@ -10,15 +10,18 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/icon": "^1.15.0",
+    "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.24",
-    "nuxt": "^4.3.0",
+    "nuxt": "3.11.2",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17"
   },
   "packageManager": "pnpm@10.22.0+sha256.053a8493e8e328a3c6d7ff5cb079bef28719152ccf831e4666b5c0332b77bb88",
   "dependencies": {
-    "vue": "^3.4.21",
+    "@nuxt/image": "^2.0.0",
+    "microcms-js-sdk": "^3.3.0",
+    "nuxt-icon": "^1.0.0-beta.7",
+    "vue": "^3.5.28",
     "vue-router": "^4.3.0"
   }
 }

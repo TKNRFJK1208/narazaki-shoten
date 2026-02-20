@@ -1,7 +1,14 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/icon"],
   ssr: true,
+  runtimeConfig: {
+    microcmsApiKey: process.env.MICROCMS_API_KEY,
+    public: {
+      microcmsServiceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
+    }
+  },
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: "Narazaki Shoten | Healthy & Fast Gyu-don in Amsterdam",
       meta: [
@@ -17,22 +24,34 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', crossorigin: '' }
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+          crossorigin: "",
+        },
       ],
     },
   },
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css", "~/assets/css/transitions.css"],
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
-  // nitro: {
-  //   prerender: {
-  //     crawlLinks: true,
-  //     routes: ["/"],
-  //   },
-  // },
+  modules: ["nuxt-icon", "@nuxt/image"],
+  components: [
+    {
+      path: "~/components",
+      pathPrefix: false,
+    },
+  ],
+  nitro: {
+    preset: "aws-lambda",
+    prerender: {
+      crawlLinks: true,
+      routes: ["/"],
+    },
+  },
   devtools: { enabled: true },
 });

@@ -1,0 +1,56 @@
+name: Deploy to AWS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Nuxt App
+        run: npm run build
+        env:
+          NITRO_PRESET: aws-lambda
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-1
+
+      - name: Setup AWS SAM CLI
+        uses: aws-actions/setup-sam@v2
+
+      - name: SAM Build
+        run: sam build
+
+      - name: SAM Deploy
+        run: |
+          sam deploy \
+            --no-confirm-changeset \
+            --no-fail-on-empty-changeset \
+            --stack-name narazaki-shoten-stack \
+            --resolve-s3 \
+            --capabilities CAPABILITY_IAM \
+            --parameter-overrides \
+              MicrocmsServiceDomain=${{ secrets.MICROCMS_SERVICE_DOMAIN }} \
+              MicrocmsApiKey=${{ secrets.MICROCMS_API_KEY }}
+
+      - name: Sync Static Assets to S3
+        run: |
+          BUCKET_NAME=$(aws cloudformation describe-stacks --stack-name narazaki-shoten-stack --query "Stacks[0].Outputs[?OutputKey=='StaticAssetsBucketName'].OutputValue" --output text)
+          aws s3 sync .output/public s3://$BUCKET_NAME --delete --exclude "*" --include "_nuxt/*" --include "favicon.ico"
