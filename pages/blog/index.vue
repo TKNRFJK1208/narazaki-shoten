@@ -16,8 +16,12 @@
                 class="object-cover w-full h-full" 
               />
             </template>
-            <div v-else class="flex items-center justify-center h-full text-gray-500">
-              <Icon name="mdi:image-off" class="w-12 h-12" />
+            <div v-else class="flex items-center justify-center h-full w-full bg-gray-800">
+              <NuxtImg 
+                src="https://placehold.jp/800x450.png?text=Narazaki" 
+                alt="Narazaki Shoten" 
+                class="object-cover w-full h-full opacity-50" 
+              />
             </div>
           </div>
           <div class="p-6">
@@ -34,10 +38,7 @@
 <script setup lang="ts">
 import type { BlogResponse } from '~/types/blog';
 
-const client = useMicroCMS();
-const { data, pending, error } = await useAsyncData<BlogResponse>('blog-list', () =>
-  client.get({ endpoint: 'blog' })
-);
+const { data, pending, error } = await useFetch<BlogResponse>('/api/blog');
 
 useHead({
   title: 'Blog | Narazaki Shoten',

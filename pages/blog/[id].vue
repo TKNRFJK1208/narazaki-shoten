@@ -6,6 +6,9 @@
       <div v-if="data?.eyecatch" class="mb-8 rounded-lg overflow-hidden">
         <NuxtImg :src="data.eyecatch.url" :alt="data.title" class="w-full h-auto" />
       </div>
+      <div v-else class="mb-8 rounded-lg overflow-hidden bg-gray-800 flex items-center justify-center">
+        <NuxtImg src="https://placehold.jp/800x450.png?text=Narazaki" alt="Narazaki Shoten" class="w-full h-auto opacity-50" />
+      </div>
       <h1 class="text-4xl font-bold mb-4 text-primary">{{ data?.title }}</h1>
       <p class="text-gray-400 mb-8">{{ new Date(data?.publishedAt).toLocaleDateString() }}</p>
       <div class="prose prose-invert max-w-none" v-html="data?.content"></div>
@@ -20,11 +23,8 @@
 import type { BlogPost } from '~/types/blog';
 
 const route = useRoute();
-const client = useMicroCMS();
 
-const { data, pending, error } = await useAsyncData<BlogPost>(`blog-${route.params.id}`, () =>
-  client.get({ endpoint: 'blog', contentId: route.params.id as string })
-);
+const { data, pending, error } = await useFetch<BlogPost>(`/api/blog/${route.params.id}`);
 
 if (error.value || !data.value) {
   throw createError({ statusCode: 404, statusMessage: 'Article Not Found' });

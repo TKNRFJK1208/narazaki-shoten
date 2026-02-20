@@ -1,7 +1,20 @@
 <template>
-  <div class="min-h-screen bg-[#121212] text-white font-sans antialiased">
+  <div class="min-h-screen flex flex-col bg-[#121212] text-white font-sans antialiased">
     <TheHeader />
-    <NuxtPage />
+    <main class="flex-grow">
+      <NuxtPage />
+    </main>
     <TheFooter />
   </div>
 </template>
+
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Narazaki Shoten - European Gyudon Project',
+  description: 'Bringing the authentic taste of Japanese Gyudon to Europe.',
+  ogTitle: 'Narazaki Shoten - European Gyudon Project',
+  ogDescription: 'Bringing the authentic taste of Japanese Gyudon to Europe.',
+  ogImage: 'https://placehold.jp/800x450.png?text=Narazaki',
+  twitterCard: 'summary_large_image',
+})
+</script>
