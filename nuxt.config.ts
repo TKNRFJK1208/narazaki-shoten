@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
+  compatibilityDate: "2024-04-03",
   runtimeConfig: {
     microcmsApiKey: process.env.MICROCMS_API_KEY,
     public: {
@@ -49,8 +50,9 @@ export default defineNuxtConfig({
   nitro: {
     preset: "aws-lambda",
     prerender: {
-      crawlLinks: true,
-      routes: ["/"],
+      crawlLinks: false, // リンクの自動クロールをオフにする
+      failOnError: false, // プリレンダリングでエラーが出てもビルドを続行する
+      ignore: ['/'], // Lambda環境以外でクラッシュするのを防ぐ
     },
   },
   devtools: { enabled: true },
