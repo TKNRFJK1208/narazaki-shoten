@@ -58,3 +58,10 @@ jobs:
         run: |
           BUCKET_NAME=$(aws cloudformation describe-stacks --stack-name narazaki-shoten-stack --query "Stacks[0].Outputs[?OutputKey=='StaticAssetsBucketName'].OutputValue" --output text)
           aws s3 sync .output/public s3://$BUCKET_NAME --delete
+
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
+
