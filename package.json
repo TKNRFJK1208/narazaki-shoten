@@ -18,7 +18,6 @@
   },
   "packageManager": "pnpm@10.22.0+sha256.053a8493e8e328a3c6d7ff5cb079bef28719152ccf831e4666b5c0332b77bb88",
   "dependencies": {
-    "@nuxt/image": "^2.0.0",
     "microcms-js-sdk": "^3.3.0",
     "nuxt-icon": "^1.0.0-beta.7",
     "vue": "^3.5.28",

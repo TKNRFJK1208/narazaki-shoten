@@ -8,20 +8,12 @@
         <NuxtLink :to="`/blog/${article.id}`">
           <div class="aspect-video relative bg-gray-800">
             <template v-if="article.eyecatch">
-              <NuxtImg 
-                :src="article.eyecatch.url" 
-                :alt="article.title" 
-                :width="article.eyecatch.width" 
-                :height="article.eyecatch.height" 
-                class="object-cover w-full h-full" 
-              />
+              <img :src="article.eyecatch.url" :alt="article.title" :width="article.eyecatch.width"
+                :height="article.eyecatch.height" class="object-cover w-full h-full" />
             </template>
             <div v-else class="flex items-center justify-center h-full w-full bg-gray-800">
-              <NuxtImg 
-                src="https://placehold.jp/800x450.png?text=Narazaki" 
-                alt="Narazaki Shoten" 
-                class="object-cover w-full h-full opacity-50" 
-              />
+              <img src="https://placehold.jp/800x450.png?text=Narazaki" alt="Narazaki Shoten"
+                class="object-cover w-full h-full opacity-50" />
             </div>
           </div>
           <div class="p-6">

@@ -1,7 +1,7 @@
 <template>
   <div>
     <SectionHero />
-    
+
     <!-- Menu Teaser -->
     <section class="py-20 bg-background text-center">
       <div class="container mx-auto px-4">
@@ -10,7 +10,8 @@
           日本の伝統的な牛丼を、アムステルダムの感性で。<br>
           出汁、米、そして肉。すべてにこだわった一杯です。
         </p>
-        <NuxtLink to="/menu" class="inline-block border border-primary text-primary px-8 py-3 rounded-full hover:bg-primary hover:text-background transition-colors">
+        <NuxtLink to="/menu"
+          class="inline-block border border-primary text-primary px-8 py-3 rounded-full hover:bg-primary hover:text-background transition-colors">
           View Menu
         </NuxtLink>
       </div>
@@ -21,7 +22,7 @@
       <!-- Background decoration could go here -->
       <div class="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-1/2">
-           <NuxtImg src="/images/about-kitchen.png" alt="Kitchen" class="rounded-lg shadow-xl opacity-80" />
+          <img src="/images/about-kitchen.png" alt="Kitchen" class="rounded-lg shadow-xl opacity-80" />
         </div>
         <div class="md:w-1/2 text-left">
           <h2 class="text-3xl font-serif text-primary mb-6">私たちの想い</h2>
@@ -44,7 +45,8 @@
           デ・パイプ地区の中心で、皆様をお待ちしております。
         </p>
         <div class="flex justify-center gap-4">
-          <NuxtLink to="/location" class="inline-block bg-white/10 px-8 py-3 rounded hover:bg-white/20 transition-colors">
+          <NuxtLink to="/location"
+            class="inline-block bg-white/10 px-8 py-3 rounded hover:bg-white/20 transition-colors">
             Access & Hours
           </NuxtLink>
         </div>

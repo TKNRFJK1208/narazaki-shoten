@@ -40,7 +40,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["nuxt-icon", "@nuxt/image"],
+  modules: ["nuxt-icon"],
   components: [
     {
       path: "~/components",

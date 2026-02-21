@@ -4,10 +4,11 @@
     <div v-else-if="error" class="text-center text-red-500">Article not found</div>
     <article v-else class="max-w-3xl mx-auto bg-surface rounded-lg p-8 shadow-lg">
       <div v-if="data?.eyecatch" class="mb-8 rounded-lg overflow-hidden">
-        <NuxtImg :src="data.eyecatch.url" :alt="data.title" class="w-full h-auto" />
+        <img :src="data.eyecatch.url" :alt="data.title" class="w-full h-auto" />
       </div>
       <div v-else class="mb-8 rounded-lg overflow-hidden bg-gray-800 flex items-center justify-center">
-        <NuxtImg src="https://placehold.jp/800x450.png?text=Narazaki" alt="Narazaki Shoten" class="w-full h-auto opacity-50" />
+        <img src="https://placehold.jp/800x450.png?text=Narazaki" alt="Narazaki Shoten"
+          class="w-full h-auto opacity-50" />
       </div>
       <h1 class="text-4xl font-bold mb-4 text-primary">{{ data?.title }}</h1>
       <p class="text-gray-400 mb-8">{{ new Date(data?.publishedAt).toLocaleDateString() }}</p>
@@ -33,7 +34,7 @@ if (error.value || !data.value) {
 useServerSeoMeta({
   title: () => `${data.value?.title} | Narazaki Shoten`,
   ogTitle: () => data.value?.title,
-  description: () => data.value?.content?.substring(0, 100).replace(/<[^>]*>?/gm, '') + '...', 
+  description: () => data.value?.content?.substring(0, 100).replace(/<[^>]*>?/gm, '') + '...',
   ogDescription: () => data.value?.content?.substring(0, 100).replace(/<[^>]*>?/gm, '') + '...',
   ogImage: () => data.value?.eyecatch?.url,
   twitterCard: 'summary_large_image',
