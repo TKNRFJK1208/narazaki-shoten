@@ -22,7 +22,7 @@
       <!-- Background decoration could go here -->
       <div class="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-1/2">
-          <img src="/images/about-kitchen.png" alt="Kitchen" class="rounded-lg shadow-xl opacity-80" />
+          <img src="/assets/images/about-kitchen.png" alt="Kitchen" class="rounded-lg shadow-xl opacity-80" />
         </div>
         <div class="md:w-1/2 text-left">
           <h2 class="text-3xl font-serif text-primary mb-6">私たちの想い</h2>

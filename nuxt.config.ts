@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         { property: "og:type", content: "website" },
       ],
       link: [
-        { rel: "icon", type: "image/x-icon", href: "/favicon.ico?v=1" },
+        { rel: "icon", type: "image/x-icon", href: "/assets/favicon.ico?v=1" },
         {
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",

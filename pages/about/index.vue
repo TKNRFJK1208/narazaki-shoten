@@ -2,7 +2,8 @@
   <div class="bg-background min-h-screen text-white pb-20">
     <!-- Hero Section -->
     <div class="relative h-[50vh] overflow-hidden">
-      <img src="/images/about-kitchen.png" alt="Narazaki Kitchen" class="object-cover w-full h-full opacity-60" />
+      <img src="/assets/images/about-kitchen.png" alt="Narazaki Kitchen"
+        class="object-cover w-full h-full opacity-60" />
       <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
         <h1 class="text-4xl md:text-6xl font-serif tracking-widest text-primary">私たちの想い</h1>
       </div>

@@ -2,7 +2,7 @@
   <header class="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-white/10">
     <div class="container mx-auto px-4 h-16 flex items-center justify-between">
       <NuxtLink to="/" class="flex items-center gap-2">
-        <img src="/img/logo-dummy.png" alt="Narazaki Logo" class="h-8 w-auto mix-blend-lighten" />
+        <img src="/assets/img/logo-dummy.png" alt="Narazaki Logo" class="h-8 w-auto mix-blend-lighten" />
       </NuxtLink>
 
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium">

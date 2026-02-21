@@ -97,17 +97,7 @@ Resources:
             ViewerProtocolPolicy: https-only
             AllowedMethods: [GET, HEAD]
             CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
-          - PathPattern: /img/*
-            TargetOriginId: S3Origin
-            ViewerProtocolPolicy: https-only
-            AllowedMethods: [GET, HEAD]
-            CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
-          - PathPattern: /images/*
-            TargetOriginId: S3Origin
-            ViewerProtocolPolicy: https-only
-            AllowedMethods: [GET, HEAD]
-            CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
-          - PathPattern: /favicon.ico
+          - PathPattern: /assets/*
             TargetOriginId: S3Origin
             ViewerProtocolPolicy: https-only
             AllowedMethods: [GET, HEAD]
