@@ -36,7 +36,7 @@ useServerSeoMeta({
   ogTitle: () => data.value?.title,
   description: () => data.value?.content?.substring(0, 100).replace(/<[^>]*>?/gm, '') + '...',
   ogDescription: () => data.value?.content?.substring(0, 100).replace(/<[^>]*>?/gm, '') + '...',
-  ogImage: () => data.value?.eyecatch?.url,
+  ogImage: () => data.value?.eyecatch?.url || '/assets/img/og-image.jpg',
   twitterCard: 'summary_large_image',
 });
 </script>

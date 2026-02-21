@@ -11,10 +11,10 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Narazaki Shoten - European Gyudon Project',
-  description: 'Bringing the authentic taste of Japanese Gyudon to Europe.',
+  description: 'Bringing the authentic taste of Japanese Gyudon to Europe (Amsterdam).',
   ogTitle: 'Narazaki Shoten - European Gyudon Project',
-  ogDescription: 'Bringing the authentic taste of Japanese Gyudon to Europe.',
-  ogImage: 'https://placehold.jp/800x450.png?text=Narazaki',
+  ogDescription: 'Bringing the authentic taste of Japanese Gyudon to Europe (Amsterdam).',
+  ogImage: '/assets/img/og-image.jpg',
   twitterCard: 'summary_large_image',
 })
 </script>
